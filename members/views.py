@@ -4,8 +4,13 @@ from .models import Members
 
 # Create your views here.
 def index(req):
-    print(dir(req))
-    return HttpResponse("Hello World")
+    #print(dir(req))
+    print(req.GET.get('id',''))
+    num = req.GET.get('id','') 
+    return HttpResponse(f"<h2> input data : {squred(num)}</h2>")
+
+def squred(i):
+    return int(i) * int(i)
 
 def test(req):
     return HttpResponse("<h2>Test</h2>")
