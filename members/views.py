@@ -12,6 +12,9 @@ def index(req):
 
     return HttpResponse(f"<h2> 구구단 : {gugu(num)}</h2>")
 
+def lotto(req):
+    return ""
+
 def squred(i):
     return int(i) * int(i)
 
