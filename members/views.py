@@ -7,10 +7,21 @@ def index(req):
     #print(dir(req))
     print(req.GET.get('id',''))
     num = req.GET.get('id','') 
-    return HttpResponse(f"<h2> input data : {squred(num)}</h2>")
+    if len(num) < 1:
+        return HttpResponse("<h1>dynamic page</h1>")
+
+    return HttpResponse(f"<h2> 구구단 : {gugu(num)}</h2>")
 
 def squred(i):
     return int(i) * int(i)
+
+def gugu(i):
+    str = ''
+    for vi in range(9):
+        str += f"<br>{int(i)} * {vi+1}  = {(vi+1)*int(i)}<br />"
+
+    return str
+
 
 def test(req):
     return HttpResponse("<h2>Test</h2>")
